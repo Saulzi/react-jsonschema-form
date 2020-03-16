@@ -1,0 +1,37 @@
+<html>
+
+<body>
+    <div id="main"></div>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <script src="require.js"></script>
+    <script>
+        require.config({
+            paths: {
+                "react": "react.production.min",
+                "react-dom": "react-dom.production.min"
+            }
+        });
+
+        require(["react-dom", "react", "react-jsonschema-form"], function (dom, react, rjsf) {
+            debugger;
+            let form = rjsf.default;      // Note this is because of current webpack setup... typescript does similar thing which is 
+            // defined as syntetic default exports.. 
+            dom.render(
+                react.createElement(form, {
+                    schema: {
+                        title: "This is a the umd build loaded via script tag",
+                        type: "object",
+                        properties: {
+                            "test": {
+                                type: "string"
+                            }
+                        }
+                    }
+                }),
+                document.querySelector("#main")
+            );
+        })
+    </script>
+</body>
+
+</html>

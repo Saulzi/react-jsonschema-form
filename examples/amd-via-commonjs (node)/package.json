@@ -1,0 +1,13 @@
+{
+    "name": "name",
+    "description": "description",
+    "authors": "author",
+    "version": "1.0.0",
+    "main": "index.js",
+    "dependencies": {
+        "jsdom": "16.2.1",
+        "jsdom-global": "3.0.2",
+        "react": "16.13.0",
+        "react-dom": "16.13.0"
+    }
+}
